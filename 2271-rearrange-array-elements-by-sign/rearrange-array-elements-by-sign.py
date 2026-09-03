@@ -5,20 +5,14 @@ class Solution(object):
         :rtype: List[int]
         """
         #Avinandan169
-        output=[]
-        pos_arr=[]
-        neg_arr=[]
-        idx=0
-        n=len(nums)
-        while idx<n:
-            if nums[idx]>0:
-                pos_arr.append(nums[idx])
-            if nums[idx]<0:
-                neg_arr.append(nums[idx])
-            idx+=1
-
-        for i in range(len(pos_arr)):
-            output.append(pos_arr[i])
-            output.append(neg_arr[i])
-        
+        output=[0]*len(nums)
+        pos_idx=0
+        neg_idx=1
+        for num in nums:
+            if num>0:
+                output[pos_idx]=num
+                pos_idx+=2
+            else:
+                output[neg_idx]=num
+                neg_idx+=2
         return output
